@@ -1,12 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
+import HeroSection from "@/components/home/hero-section";
+import FeaturesSection from "@/components/home/features-section";
+import ARPreviewSection from "@/components/home/ar-preview-section";
+import TalentShowcase from "@/components/home/talent-showcase";
+import SmartContractSection from "@/components/home/smart-contract-section";
+import CTASection from "@/components/home/cta-section";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    // Update page title
+    document.title = "PersonaLink | AR Talent Platform";
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-grow">
+        <HeroSection />
+        <FeaturesSection />
+        <ARPreviewSection />
+        <TalentShowcase />
+        <SmartContractSection />
+        <CTASection />
+      </main>
+      <Footer />
     </div>
   );
 };
